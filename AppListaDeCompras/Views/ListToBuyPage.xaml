@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppListaDeCompras.Views.ListToBuyPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Lista de Compras">
+    <Grid RowDefinitions="75, *">
+        <StackLayout Padding="10" Orientation="Horizontal">
+
+            <ImageButton HeightRequest="37" Source="back.png" />
+
+            <Entry
+                Margin="15,0,0,0"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Pesquisar" />
+        </StackLayout>
+
+        <CollectionView Grid.Row="1">
+            <CollectionView.EmptyView>
+                <StackLayout VerticalOptions="FillAndExpand">                    
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource Paragraph}"
+                    Text="Nenhuma lista de compras... :("
+                    VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+        <Button
+            Grid.Row="1"
+            Margin="20"
+            HorizontalOptions="End"
+            Text="+"
+            VerticalOptions="End" />
+    </Grid>
+</ContentPage>
