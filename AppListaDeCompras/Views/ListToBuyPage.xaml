@@ -29,16 +29,12 @@
                             Margin="15,10,0,10"
                             HeightRequest="64"
                             Source="my_list.svg" />
-                        <VerticalStackLayout
-                            Grid.Column="1"
-                            Margin="15,0,0,0"
-                            VerticalOptions="Center">
-                            <Label Text="{Binding Name}" />
+                        <VerticalStackLayout Grid.Column="1" Margin="15,0,0,0">
+                            <Label Style="{StaticResource Paragraph}" Text="{Binding Name}" />
                             <HorizontalStackLayout>
-                                <Label Text="{Binding Products.Count}" />
-                                <Label Text=" itens - " />
-                                <Label Text="{Binding Users.Count}" />
-                                <Label Text=" produtos " />
+                                <Label Style="{StaticResource SmallText}" Text="{Binding Products.Count}" />
+                                <Label Style="{StaticResource SmallText}" Text=" itens - " />
+                                <Label Style="{StaticResource SmallText}" Text="{Binding Users.Count}" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <Label
