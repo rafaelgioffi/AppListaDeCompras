@@ -3,7 +3,13 @@
     x:Class="AppListaDeCompras.Views.ListToBuyPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels"
     Title="Lista de Compras">
+
+    <ContentPage.BindingContext>
+        <vm:ListToBuyViewModel />
+    </ContentPage.BindingContext>
+
     <Grid RowDefinitions="75, *">
         <StackLayout Padding="10" Orientation="Horizontal">
 
@@ -15,16 +21,57 @@
                 Placeholder="Pesquisar" />
         </StackLayout>
 
-        <CollectionView Grid.Row="1">
+        <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 30">
+                        <Image
+                            Margin="15,10,0,10"
+                            HeightRequest="64"
+                            Source="my_list.svg" />
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Margin="15,0,0,0"
+                            VerticalOptions="Center">
+                            <Label Text="{Binding Name}" />
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Products.Count}" />
+                                <Label Text=" itens - " />
+                                <Label Text="{Binding Users.Count}" />
+                                <Label Text=" produtos " />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Label
+                            Grid.Column="2"
+                            Text="R$ 55,00"
+                            VerticalOptions="Center" />
+
+                        <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                            <Button
+                                ImageSource="{AppThemeBinding Light='share_light.svg',
+                                                              Dark='share_dark.svg'}"
+                                Style="{StaticResource ButtonBorderless}"
+                                Text="Compartilhar" />
+                            <Button
+                                ImageSource="{AppThemeBinding Light='delete_light.svg',
+                                                              Dark='delete_dark.svg'}"
+                                Style="{StaticResource ButtonBorderless}"
+                                Text="Excluir" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
             <CollectionView.EmptyView>
-                <StackLayout VerticalOptions="FillAndExpand">                    
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Style="{StaticResource Paragraph}"
-                    Text="Nenhuma lista de compras... :("
-                    VerticalOptions="CenterAndExpand" />
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource Paragraph}"
+                        Text="Nenhuma lista de compras... :("
+                        VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </CollectionView.EmptyView>
+
         </CollectionView>
 
         <Button

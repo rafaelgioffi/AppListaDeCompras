@@ -62,14 +62,16 @@
 	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
 	  <None Remove="Resources\Images\back.svg" />
 	  <None Remove="Resources\Images\close.svg" />
-	  <None Remove="Resources\Images\delete.svg" />
+	  <None Remove="Resources\Images\delete_dark.svg" />
+	  <None Remove="Resources\Images\delete_light.svg" />
 	  <None Remove="Resources\Images\icon_lista.svg" />
 	  <None Remove="Resources\Images\icon_perfil.svg" />
 	  <None Remove="Resources\Images\image_cart.svg" />
 	  <None Remove="Resources\Images\image_mail.svg" />
 	  <None Remove="Resources\Images\image_password.svg" />
 	  <None Remove="Resources\Images\my_list.svg" />
-	  <None Remove="Resources\Images\share.svg" />
+	  <None Remove="Resources\Images\share_dark.svg" />
+	  <None Remove="Resources\Images\share_light.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,10 +79,6 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Models\" />
 	</ItemGroup>
 
 	<ItemGroup>
