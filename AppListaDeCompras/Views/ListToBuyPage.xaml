@@ -20,11 +20,10 @@
                 HorizontalOptions="FillAndExpand"
                 Placeholder="Pesquisar" />
         </StackLayout>
-
         <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 30">
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 30">                        
                         <Image
                             Margin="15,10,0,10"
                             HeightRequest="64"
