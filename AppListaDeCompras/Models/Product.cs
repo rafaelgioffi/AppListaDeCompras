@@ -13,5 +13,6 @@ namespace AppListaDeCompras.Models
         public int Quantity { get; set; }
         public string QuantityUnityMeasure { get; set; }
         public decimal Price { get; set; }
+        public bool HasCaught { get; set; } = false;
     }
 }

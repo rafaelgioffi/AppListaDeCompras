@@ -60,7 +60,8 @@
 	  <None Remove="Resources\Fonts\Poppins-ExtraBold.ttf" />
 	  <None Remove="Resources\Fonts\Poppins-Light.ttf" />
 	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
-	  <None Remove="Resources\Images\back.svg" />
+	  <None Remove="Resources\Images\back_dark.svg" />
+	  <None Remove="Resources\Images\back_light.svg" />
 	  <None Remove="Resources\Images\close.svg" />
 	  <None Remove="Resources\Images\delete_dark.svg" />
 	  <None Remove="Resources\Images\delete_light.svg" />
@@ -75,6 +76,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BindableProps" Version="1.4.3" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
