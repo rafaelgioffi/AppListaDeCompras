@@ -4,11 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
-    Title="ListToBuySharePage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Compartilhar"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels.Popups"
+    Title="ListToBuySharePage"
+    BackgroundColor="#AA000000">
+
+    <mopups:PopupPage.BindingContext>
+        <vm:ListToBuySharePageViewModel />
+    </mopups:PopupPage.BindingContext>
+    
+    <Border
+        Padding="20"
+        BackgroundColor="White"
+        HeightRequest="400"
+        StrokeShape="RoundRectangle 12"
+        StrokeThickness="0"
+        WidthRequest="360">
+        <VerticalStackLayout>
+            <Label
+                HorizontalOptions="Center"
+                Text="Compartilhar"
+                VerticalOptions="Center" />
+            <Button Text="X" Command="{Binding CloseCommand}" />
+            <Entry Placeholder="E-Mail" />
+            <Button Text="Adicionar" />
+        </VerticalStackLayout>
+    </Border>
 </mopups:PopupPage>

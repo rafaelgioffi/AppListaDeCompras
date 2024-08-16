@@ -7,16 +7,17 @@ public partial class HorizontalLine : ContentView
 {
     [BindableProp]
     private Color _stroke;
-	public HorizontalLine()
-	{
-		InitializeComponent();
-	}
+    public HorizontalLine()
+    {
+        InitializeComponent();
+    }
 
     protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         base.OnPropertyChanged(propertyName);
 
-        if (Window?.Width != null & Line != null) {
+        if (Window?.Width != null & Line != null)
+        {
             Line.X2 = Window.Width;
         }
 

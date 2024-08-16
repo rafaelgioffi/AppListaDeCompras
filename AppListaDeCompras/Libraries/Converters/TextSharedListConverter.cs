@@ -11,7 +11,7 @@ public class TextSharedListConverter : IValueConverter
         {
             return null;
         }
-        return usersCount > 1 ? "(compartilhada)" : string.Empty;
+        return usersCount > 1 ? "(vários usuários)" : string.Empty;
     }
 
 

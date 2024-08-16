@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AppListaDeCompras.Models
+﻿namespace AppListaDeCompras.Models
 {
     public class User
     {
@@ -12,6 +6,6 @@ namespace AppListaDeCompras.Models
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string AccessCodeTemp { get; set; } = string.Empty;
-        public DateTimeOffset AccessCodeTempCreateAt{ get; set; }
+        public DateTimeOffset AccessCodeTempCreateAt { get; set; }
     }
 }
