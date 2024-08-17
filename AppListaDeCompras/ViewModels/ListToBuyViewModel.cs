@@ -5,15 +5,15 @@ using CommunityToolkit.Mvvm.Input;
 using Mopups.Services;
 using System.Collections.ObjectModel;
 
-namespace AppListaDeCompras.ViewModels;
-
-public partial class ListToBuyViewModel : ObservableObject
+namespace AppListaDeCompras.ViewModels
 {
-    [ObservableProperty]
-    private ObservableCollection<ListToBuy> _listToBuy;
-    public ListToBuyViewModel()
+    public partial class ListToBuyViewModel : ObservableObject
     {
-        ListToBuy = new ObservableCollection<ListToBuy>() {
+        [ObservableProperty]
+        private ObservableCollection<ListToBuy> _listToBuy;
+        public ListToBuyViewModel()
+        {
+            ListToBuy = new ObservableCollection<ListToBuy>() {
     new ListToBuy() {
         Id = 1,
     Name = "Minha Lista 1",
@@ -58,12 +58,13 @@ public partial class ListToBuyViewModel : ObservableObject
     }
 
 };
-    }
+        }
 
-    [RelayCommand]
-    private void OpenPopupSharePage()
-    {
-        MopupService.Instance.PushAsync(new ListToBuySharePage());
-    }
+        [RelayCommand]
+        private void OpenPopupSharePage(ListToBuy listSelected)
+        {
+            MopupService.Instance.PushAsync(new ListToBuySharePage(listSelected));
+        }
 
+    }
 }

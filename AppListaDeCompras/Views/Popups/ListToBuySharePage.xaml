@@ -3,30 +3,50 @@
     x:Class="AppListaDeCompras.Views.Popups.ListToBuySharePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:AppListaDeCompras.Libraries.Components"
     xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
     xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels.Popups"
     Title="ListToBuySharePage"
-    BackgroundColor="#AA000000">
+    BackgroundColor="#AA000000"
+    CloseWhenBackgroundIsClicked="False">
 
     <mopups:PopupPage.BindingContext>
         <vm:ListToBuySharePageViewModel />
     </mopups:PopupPage.BindingContext>
-    
+
     <Border
         Padding="20"
-        BackgroundColor="White"
+        BackgroundColor="{AppThemeBinding Light='White',
+                                          Dark='#212121'}"
         HeightRequest="400"
         StrokeShape="RoundRectangle 12"
         StrokeThickness="0"
         WidthRequest="360">
-        <VerticalStackLayout>
-            <Label
-                HorizontalOptions="Center"
-                Text="Compartilhar"
-                VerticalOptions="Center" />
-            <Button Text="X" Command="{Binding CloseCommand}" />
+        <VerticalStackLayout Spacing="10">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Compartilhar"
+                    VerticalOptions="Center" />
+                <ImageButton
+                    Command="{Binding CloseCommand}"
+                    Scale="0.5"
+                    Source="{AppThemeBinding Light='close_light.svg',
+                                             Dark='close_dark.svg'}" />
+            </StackLayout>
             <Entry Placeholder="E-Mail" />
             <Button Text="Adicionar" />
+            <CollectionView ItemsSource="{Binding List.Users}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <components:HorizontalLine Stroke="Gray" />
+                            <Label Text="{Binding Name}" TextColor="{AppThemeBinding Light='Black', Dark='#C8C8C8'}" />
+                            <Label Text="{Binding Email}" TextColor="{AppThemeBinding Light='Black', Dark='#C8C8C8'}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </Border>
 </mopups:PopupPage>

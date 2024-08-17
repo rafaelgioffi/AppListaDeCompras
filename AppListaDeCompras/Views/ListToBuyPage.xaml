@@ -77,7 +77,8 @@
 
                         <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="3">
                             <Button
-                                Command="{Binding OpenPopupSharePageCommand}"
+                                Command="{Binding OpenPopupSharePageCommand, Source={x:Reference vm}}"
+                                CommandParameter="{Binding .}"
                                 ImageSource="{AppThemeBinding Light='share_light.svg',
                                                               Dark='share_dark.svg'}"
                                 Style="{StaticResource ButtonBorderless}"
