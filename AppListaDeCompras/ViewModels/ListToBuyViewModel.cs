@@ -20,11 +20,11 @@ namespace AppListaDeCompras.ViewModels
     Users = new List<User>()
     {
         new User {
-            Name = "Rafael",
+            Name = "Rafael Gioffi",
             Email="rafaegioffi@gmail.com"
         },
         new User {
-            Name = "Bruna",
+            Name = "Bruna Pereira",
             Email="brunarpereira@hotmail.com"
         }
         },
