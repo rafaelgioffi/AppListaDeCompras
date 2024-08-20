@@ -15,10 +15,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="75, *">
+    <Grid RowDefinitions="75, *, 1, 75">
         <StackLayout Padding="10" Orientation="Horizontal">
 
-            <!--<ImageButton HeightRequest="37" Source="{AppThemeBinding Light='back_light.svg', Dark='back_dark.png'}" />-->
+            <ImageButton HeightRequest="37" Source="{AppThemeBinding Light='back_light.svg', Dark='back_dark.png'}" />
 
             <Entry
                 Margin="15,0,0,0"
@@ -116,6 +116,23 @@
             HorizontalOptions="End"
             Text="+"
             VerticalOptions="End" />
+
+        <components:HorizontalLine Grid.Row="2" Stroke="LightGray" />
+
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Lista (0 itens)" />
+                <Label Text="Falta (0 itens)" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Carrinho " />
+                <Label Text="0 itens" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2">
+                <Label Text="Total " />
+                <Label Text="R$ 0,00" />
+            </VerticalStackLayout>
+        </Grid>
     </Grid>
 
 </ContentPage>
