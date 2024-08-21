@@ -35,8 +35,11 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout>
-                        <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 1, 20, 1">
+                    <VerticalStackLayout HeightRequest="110">
+                        <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenListOfItensPageCommand, Source={x:Reference vm}}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
                             <Image
                                 Grid.Row="0"
                                 Margin="15,5,0,0"
@@ -67,12 +70,9 @@
                                 VerticalOptions="Center" />
 
                         </Grid>
-                        <components:HorizontalLine
-                            Grid.Row="1"
-                            Grid.ColumnSpan="3"
-                            Stroke="LightGray" />
+                        <components:HorizontalLine Stroke="LightGray" />
 
-                        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="3">
+                        <HorizontalStackLayout>
                             <Button
                                 Command="{Binding OpenPopupSharePageCommand, Source={x:Reference vm}}"
                                 CommandParameter="{Binding .}"
@@ -86,10 +86,7 @@
                                 Style="{StaticResource ButtonBorderless}"
                                 Text="Excluir" />
                         </HorizontalStackLayout>
-                        <components:HorizontalLine
-                            Grid.Row="3"
-                            Grid.ColumnSpan="3"
-                            Stroke="Gray" />
+                        <components:HorizontalLine Stroke="Gray" />
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

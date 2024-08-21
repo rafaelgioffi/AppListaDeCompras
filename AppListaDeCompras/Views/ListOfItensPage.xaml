@@ -8,6 +8,10 @@
     xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels"
     Title="ListOfItensPage">
 
+    <ContentPage.BindingContext>
+        <vm:ListOfItensPageViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:TextSharedListConverter x:Key="TextSharedListConverter" />
@@ -21,79 +25,40 @@
             <ImageButton HeightRequest="37" Source="{AppThemeBinding Light='back_light.svg', Dark='back_dark.png'}" />
 
             <Entry
-                Margin="15,0,0,0"
+                Margin="15,15,0,15"
                 HorizontalOptions="FillAndExpand"
-                Placeholder="Pesquisar" />
+                Placeholder="Pesquisar"
+                Text="{Binding ListToBuy.Name}" />
         </StackLayout>
-        <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
+        <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy.Products}">
 
-            <CollectionView.Header>
-                <components:HorizontalLine
-                    Grid.ColumnSpan="3"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="FillAndExpand"
-                    Stroke="Gray" />
-            </CollectionView.Header>
+            <CollectionView.Header />
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 1, 30, 1">
-                        <Image
-                            Grid.Row="0"
-                            Margin="15,10,0,10"
-                            HeightRequest="64"
-                            Source="my_list.svg" />
-                        <VerticalStackLayout
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Margin="15,0,0,0">
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 1">
+                        <CheckBox />
+                        <VerticalStackLayout Grid.Column="1" Margin="15,0,0,0">
                             <Label
                                 Padding="0,5,0,0"
                                 Style="{StaticResource Paragraph}"
                                 Text="{Binding Name}" />
                             <HorizontalStackLayout Padding="0,0,0,0">
-                                <Label Style="{StaticResource SmallText}" Text="{Binding Products.Count}" />
-                                <Label Style="{StaticResource SmallText}" Text=" itens " />
-                                <Label
-                                    Style="{StaticResource SmallText}"
-                                    Text="{Binding Users.Count, Converter={StaticResource TextSharedListConverter}}"
-                                    TextColor="{AppThemeBinding Light={StaticResource Primary},
-                                                                Dark={StaticResource PrimaryDark}}" />
+                                <Label Style="{StaticResource SmallText}" Text="Quantidade: " />
+                                <Label Style="{StaticResource SmallText}" Text="{Binding Quantity}" />
+                                <Label Style="{StaticResource SmallText}" Text="{Binding QuantityUnityMeasure}" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <Label
-                            Grid.Row="0"
                             Grid.Column="2"
-                            Text="{Binding ., Converter={StaticResource TextTotalPriceOfItensInCartConverter}}"
+                            Text="{Binding Price}"
                             VerticalOptions="Center" />
 
                         <components:HorizontalLine
                             Grid.Row="1"
                             Grid.ColumnSpan="3"
-                            BackgroundColor="Transparent"
-                            HorizontalOptions="FillAndExpand"
-                            Stroke="LightGray" />
-
-                        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="3">
-                            <Button
-                                Command="{Binding OpenPopupSharePageCommand, Source={x:Reference vm}}"
-                                CommandParameter="{Binding .}"
-                                ImageSource="{AppThemeBinding Light='share_light.svg',
-                                                              Dark='share_dark.svg'}"
-                                Style="{StaticResource ButtonBorderless}"
-                                Text="Compartilhar" />
-                            <Button
-                                ImageSource="{AppThemeBinding Light='delete_light.svg',
-                                                              Dark='delete_dark.svg'}"
-                                Style="{StaticResource ButtonBorderless}"
-                                Text="Excluir" />
-                        </HorizontalStackLayout>
-                        <components:HorizontalLine
-                            Grid.Row="3"
-                            Grid.ColumnSpan="3"
-                            BackgroundColor="Transparent"
-                            HorizontalOptions="FillAndExpand"
                             Stroke="Gray" />
+
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -119,7 +84,10 @@
 
         <components:HorizontalLine Grid.Row="2" Stroke="LightGray" />
 
-        <Grid Grid.Row="3" ColumnDefinitions="*,*,*">
+        <Grid
+            Grid.Row="3"
+            ColumnDefinitions="*,*,*"
+            HorizontalOptions="CenterAndExpand">
             <VerticalStackLayout Grid.Column="0">
                 <Label Text="Lista (0 itens)" />
                 <Label Text="Falta (0 itens)" />
