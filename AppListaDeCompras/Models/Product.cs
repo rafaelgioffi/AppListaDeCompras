@@ -1,12 +1,16 @@
-﻿namespace AppListaDeCompras.Models
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace AppListaDeCompras.Models
 {
-    public class Product
+    public partial class Product : ObservableObject
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public string QuantityUnityMeasure { get; set; }
         public decimal Price { get; set; }
-        public bool HasCaught { get; set; } = false;
+
+        [ObservableProperty]
+        private bool hasCaught = false;
     }
 }

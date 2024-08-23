@@ -30,8 +30,8 @@ namespace AppListaDeCompras.ViewModels
         },
         Products = new List<Product>()
         {
-            new Product { Name = "Arroz Tipo 1 Tio Lautério 5Kg", Quantity = 1, Price = 32.98m, HasCaught = true },
-            new Product { Name = "Filé de peito de frango Sadia 1Kg", Quantity = 3, Price = 16.99m, HasCaught = true },
+            new Product { Name = "Arroz Tipo 1 Tio Lautério 5Kg", Quantity = 4, Price = 27.98m, HasCaught = true },
+            new Product { Name = "Filé de peito de frango Sadia 1Kg", Quantity = 6, Price = 18.99m, HasCaught = true },
             new Product { Name = "Alho a granel", Quantity = 1, Price = 8.49m },
     },
     CreateAt = DateTime.Now,
@@ -73,7 +73,7 @@ namespace AppListaDeCompras.ViewModels
                 {
                     { "ListToBuy", listSelected }
                 };
-            Shell.Current.GoToAsync("//ListToBuy/ListOfItens");
+            Shell.Current.GoToAsync("//ListToBuy/ListOfItens", pageParameter);
         }
     }
 }
