@@ -30,9 +30,10 @@ namespace AppListaDeCompras.ViewModels
         },
         Products = new List<Product>()
         {
-            new Product { Name = "Arroz Tipo 1 Tio Lautério 5Kg", Quantity = 4, Price = 27.98m, HasCaught = true },
-            new Product { Name = "Filé de peito de frango Sadia 1Kg", Quantity = 6, Price = 18.99m, HasCaught = true },
-            new Product { Name = "Alho a granel", Quantity = 1, Price = 8.49m },
+            new Product { Name = "Arroz Tipo 1 Tio Lautério 5Kg", Quantity = 2, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 27.98m, HasCaught = true },
+            new Product { Name = "Filé de peito de frango Sadia 1Kg", Quantity = 6, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 18.99m, HasCaught = true },
+            new Product { Name = "Alho a granel", Quantity = 1, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 8.49m },
+            new Product { Name = "Contra Filé", Quantity = 1.5m, QuantityUnityMeasure = Models.Enums.UnitMeasure.Kg, Price = 26.99m },
     },
     CreateAt = DateTime.Now,
     },
@@ -50,8 +51,8 @@ namespace AppListaDeCompras.ViewModels
     },
     Products = new List<Product>()
         {
-            new Product { Name = "Banana", Quantity = 1, Price = 5.49m, HasCaught = true },
-            new Product { Name = "Biscoito de Maisena Marilan c/ 3", Quantity = 3, Price = 6.49m, HasCaught = true },
+            new Product { Name = "Banana", Quantity = 1, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 5.49m, HasCaught = true },
+            new Product { Name = "Biscoito de Maisena Marilan c/ 3", QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Quantity = 3, Price = 6.49m, HasCaught = true },
     },
     CreateAt = DateTime.Now.AddDays(-7),
 

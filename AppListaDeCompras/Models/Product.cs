@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AppListaDeCompras.Models.Enums;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AppListaDeCompras.Models
 {
@@ -6,8 +7,9 @@ namespace AppListaDeCompras.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public int Quantity { get; set; }
-        public string QuantityUnityMeasure { get; set; }
+        public decimal Quantity { get; set; }
+
+        public UnitMeasure QuantityUnityMeasure { get; set; }
         public decimal Price { get; set; }
 
         [ObservableProperty]

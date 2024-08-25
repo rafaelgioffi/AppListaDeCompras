@@ -58,7 +58,7 @@
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
-                            <Label IsVisible="{Binding HasCaught}" Style="{StaticResource SmallText}">
+                            <Label IsVisible="{Binding HasCaught}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="{Binding Quantity}" />
