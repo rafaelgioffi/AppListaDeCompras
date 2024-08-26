@@ -17,6 +17,7 @@
             <converters:TextSharedListConverter x:Key="TextSharedListConverter" />
             <converters:TextTotalPriceOfItensInCartConverter x:Key="TextTotalPriceOfItensInCartConverter" />
             <converters:TextTotalPriceOfItemInCartConverter x:Key="TextTotalPriceOfItemInCartConverter" />
+            <converters:ColorTotalPriceOfItensInCartConverter x:Key="ColorTotalPriceOfItensInCartConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -72,6 +73,7 @@
                             <Label
                                 HorizontalOptions="Start"
                                 Style="{StaticResource SubHeadline}"
+                                TextColor="{Binding HasCaught, Converter={StaticResource ColorTotalPriceOfItensInCartConverter}}"
                                 VerticalOptions="Center">
                                 <Label.Text>
                                     <MultiBinding Converter="{StaticResource TextTotalPriceOfItemInCartConverter}">
