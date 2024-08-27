@@ -34,6 +34,7 @@ namespace AppListaDeCompras.ViewModels
             new Product { Name = "Filé de peito de frango Sadia 1Kg", Quantity = 6, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 18.99m, HasCaught = true },
             new Product { Name = "Alho a granel", Quantity = 1, QuantityUnityMeasure = Models.Enums.UnitMeasure.un, Price = 8.49m },
             new Product { Name = "Contra Filé", Quantity = 1.5m, QuantityUnityMeasure = Models.Enums.UnitMeasure.Kg, Price = 26.99m },
+            new Product { Name = "Patinho", Quantity = 2m, QuantityUnityMeasure = Models.Enums.UnitMeasure.Kg, Price = 24.99m },
     },
     CreateAt = DateTime.Now,
     },
