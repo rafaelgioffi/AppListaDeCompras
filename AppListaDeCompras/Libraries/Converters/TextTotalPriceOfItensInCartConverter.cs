@@ -7,23 +7,23 @@ namespace AppListaDeCompras.Libraries.Converters
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            ListToBuy listToBuy = value as ListToBuy;
+            List<Product>? listOfProducts = value as List<Product>;
 
             decimal totalPrice = 0;
 
-            if (listToBuy is null)
+            if (listOfProducts is null)
             {
                 return totalPrice.ToString("C");
             }
 
-            if (listToBuy.Products.Count == 0)
+            if (listOfProducts.Count == 0)
             {
                 return totalPrice.ToString("C");
             }
 
-            foreach (var product in listToBuy.Products)
-            {
-                //TODO - Impacto: Unidade de medidas no preço total...
+
+            foreach (var product in listOfProducts)
+            {                
                 if (product.HasCaught)
                 {
                     totalPrice += product.Price * product.Quantity;
