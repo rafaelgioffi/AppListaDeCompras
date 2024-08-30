@@ -28,7 +28,11 @@
     <Grid RowDefinitions="75, 60, *, 1, 60">
         <StackLayout Padding="10" Orientation="Horizontal">
 
-            <ImageButton HeightRequest="37" Source="{AppThemeBinding Light='back_light.svg', Dark='back_dark.png'}" />
+            <ImageButton
+                Command="{Binding BackPageCommand}"
+                HeightRequest="37"
+                Source="{AppThemeBinding Light='back_light.svg',
+                                         Dark='back_dark.png'}" />
 
             <Entry
                 Margin="15,0,0,0"
